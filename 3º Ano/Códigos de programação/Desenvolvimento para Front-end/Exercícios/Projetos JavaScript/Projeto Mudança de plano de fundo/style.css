@@ -1,0 +1,52 @@
+:root{ /* o grupo ':root' serve para definir variáveis globais(podem ser acessadas por todo o documento) que serão usadas adiante. Podendo aplicar elementos html, servindo como a raiz do documento.*/
+    --green: rgb(0, 255, 0);
+    --white: rgb(245, 245, 245); 
+    --black: rgb(47, 47, 47);
+    --blue: rgb(34, 110, 147);
+}
+*{ /* Isto seleciona todos os elementos do documento html.*/ 
+    color: var(--fontColor); /* Define a cor do texto como a variável '--fontColor'.*/
+    font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes utilizadas no documento html.*/
+}
+body{ 
+    background: var(--bg); /* Define o plano de fundo do corpo do html com a variável '--bg'(está mais abaixo).*/
+}
+
+ol{ /* Definição da fonte da lista desordenada.*/
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 25px;
+}
+p,h3{
+    margin-left: 20px;
+}
+
+
+.light-theme{ /* Seleciona os elemtnos da classe 'light-theme'*/
+    --bg: var(--white); /* Define a variável '--bg' como '--green' cujo valor é verde.*/
+    --fontColor: var(--blue) ; /* Define a cor da fonte através da variável '--fontColor' como '--black', cujo valor é preto.*/
+    --btnBg: var(--black); /* Define a cor de fundo do button como '--black', cujo valor é preto. */
+    --btnFontColor: var(--white) /* Define a cor da fonte do botão como '--white', cujo valor é branco.*/
+}
+.dark-theme{ /* Seleciona os elemtnos da classe 'dark-theme'*/
+    --bg: var(--black); /* Define a variável '--bg' como '--black' cujo valor é preto.*/
+    --fontColor: var(--white); /* Define a cor da fonte através como '--black', cujo valor é verde.*/
+    --btnBg: var(--white); /* Define a cor de fundo do button como '--white', cujo valor é branco. */
+    --btnFontColor: var(--black) /* Define a cor da fonte do botão como '--black', cujo valor é preto.*/
+
+}
+
+.btn{
+    position: absolute; /* Define a posição do botão como absoluta(posição fixa), podendo se sobrepor a outros elementos.*/    
+    top: 20px; /*Define a margem do botão em relação ao topo da página.*/
+    right: 100px; /*Define a margem do botão em relação à direita da página.*/
+    height: 20px; /* Altura do botão.*/
+    width: 55px; /* Largura do botão.*/
+    border-radius: 10px; /* A propriedade 'border-radius' define a porcentagem ou a quantidade de pixels referente ao arredondamento de alguma forma geométrica.*/
+    border: none; /* Remove a borda da forma, que no caso é um círculo.*/
+    color: var(--btnFontColor); /* Define a cor de fundo botão como a variável '--btnFontColor' que, altera conforme o tema em uso.*/
+    background-color: var(--btnBg); /* Define a cor de fundo botão como a variável '--btnBg' que, altera conforme o tema em uso.*/
+}
+
+.btn:focus{ /* Isso seleciona os elementos da classe '.btn' quando estão em foco(é quando o usuário interage com o elemento usando o teclado e o elemento recebe foco de entrada.).*/
+    outline-style: none; /* Essa linha especifica o estilo do contorno ao redor do elemento quando ele está sendo usado, através da propriedade 'outline-style'. Ao definir o valor 'none', o contorno visual estásendo removido completamente.*/
+}

@@ -1,0 +1,87 @@
+
+/* ATIVIDADE FEITA POR ARTHUR GERMANO. SÉRIE: 3ºE. DATA: 04/03/2024 */
+
+body { /* CORPO */
+
+    margin: 0; /* Atributo que força o corpo do site a ocupar toda a tela, sem que fiquem margens em brancos. */
+    height: 100vh; /* Porcentagem da altura do corpo. */
+    display: flex; /* Atributo que serve para ajustar o conteúdo do corpo conforme diferentes aparelhos(Comtadores, Tablets ou Telefones)*/
+    align-items: center; /* Serve para alinhar os itens ao centro. */
+    justify-content: center; /* Serve para justificar o conteúdo em relação ao centro.*/
+    background-color: black; /* Cor de fundo do corpo.*/
+    overflow: hidden; /*Serve para esconder o texto, deixa invisível.*/ 
+}
+
+.container { /* Estilização da div container(agrupa todas as divs) */
+    font-size: 10px; /* Tamanho da fonte(No caso o espaçamento dos elementos /linhas no corpo). */
+    width: 40em; /* Especificação da largura da div container */
+    height: 40em; /* Especificação da altura da div container */
+    position: relative; /*Não entendi essa linha. Google: "Um elemento relativamente posicionado é um elemento cujo valor de posição calculado é relativo. As propriedades superior e inferior especificam o deslocamento vertical da sua posição normal; as propriedades esquerda e direita especificam o deslocamento horizontal"
+    */
+}
+
+.sun { /* Estilização do Sol*/
+    position: absolute; /* Essa propriedade é usada para que o elemento da página parta do ponto superior esquerdo a outros elementos. Ou seja, ela determina o elemento “pai” e os elementos “parentes”.*/
+    top: 15em; /* Espaçamento do Sol em relação ao topo da página*/
+    left: 15em; /* Espaçamento do Sol em relação ao lado esquerdo da tela, no caso, a unidade "em" equivale a 3 vezes o tamanho da fonte.*/
+    width: 10em; /* Largura do Sol*/
+    height: 10em; /*Altura do Sol*/
+    background-color: yellow; /*Cor do Sol*/
+    border-radius: 50%; /* Porcentagem de arredondamento da forma para ela ficar em formato esférico*/
+    box-shadow: 0 0 3em white; /*Borda ao redor do Sol(áurea)*/
+}
+
+.earth,
+.moon { /* Estilização da linha de órbita comum à Lua e à Terra*/
+    position: absolute; /* Essa propriedade é usada para que o elemento da página parta do ponto superior esquerdo a outros elementos. Ou seja, ela determina o elemento “pai” e os elementos “parentes”.*/
+    border-style: solid; /* Borda sólida, completa*/
+    border-color: white transparent transparent transparent; /* Cor da borda(áurea)*/
+    border-width: 0.1em 0.1em 0 0; /* Espessura da borda(áurea da Terra e da Lua)*/
+    border-radius: 50%; /* Porcentagem de arredondamento da forma para ela ficar em formato esférico*/
+}
+
+.earth { /*Estilização exclusiva de órbita da Terra*/
+    top: 5em; /* Tamanho da circunferência de órbita da Terra em relação ao Sol no topo*/
+    left: 5em; /* Tamanho da circunferência de órbita da Terra em relação ao Sol na esquerda*/
+    width: 30em; /* Não entendi muito bem, mas testando percebi que tem a ver com a centralização da órbita da Terra em relação ao Sol. */
+    height: 30em; /* Não entendi muito bem como funciona, mas testando percebi que tem a ver com a centralização da órbita da Terra em relação ao Sol. */
+    animation: orbit 36.5s linear infinite; /*Animação referente a órbita da Terra em realação ao Sol. O tempo de duração da órbita é de 36.5 segundos.*/
+}
+
+.moon { /*Estilização exclusiva de órbita da Lua*/
+    top: 0; /* Margem da Lua em relação ao topo da página*/
+    right: 0; /* Não entendi como funciona, mas sei que serve para sicronizar a órbita da Lua em relação à Terra pois testei vários valores.*/
+    width: 8em; /* Posicionamento do eixo de órbita da lua em relação ao centro da página*/
+    height: 8em; /* Posicionamento do eixo de órbita da lua em relação ao centro da página*/
+    animation: orbit 2.7s linear infinite; /* Tempo de duração da animação da órbita da Lua*/
+}
+
+.earth::before, 
+.moon::before { /* O seletor ::before serve para inserir conteúdo antes do conteúdo dos elementos selecionados. Aqui, o ::before foi anexado para inserir conteúdo antes dos elementos "earth" e "moon" */
+    content: ""; /* Não entendi essa linha, já que o atributo "content" define o conteúdo do elemento. Neese caso, o conteúdo é uma string vazia(por esse motivo não entendi a função dessa linha) .*/
+    position: absolute; /* Essa propriedade é usada para que o elemento da página parta do ponto superior esquerdo a outros elementos. Ou seja, ela determina o elemento “pai” e os elementos “parentes”.*/
+    border-radius: 50%; /* Porcentagem de arredondamento tanto da Lua quanto da Terra*/
+}
+
+.earth::before { /* Estilização da Terra*/
+    top: 2.8em; /* Alinhamento da Terra em relação à trajetória/linha de órbita(Acima) */
+    right: 2.8em; /* Alinhamento da Terra em relação à trajetória/linha de órbita(Direita) */
+    width: 3em; /*Largura da Terra*/
+    height: 3em; /*Altura da Terra*/
+    background-color: rgb(3, 11, 174); /* Cor de fundo da Terra*/
+}
+
+.moon::before { /* Estilizazção da Lua*/
+    top: 0.8em; /* Alinhamento da Terra em relação à trajetória/linha de órbita(Acima) */
+    right: 0.2em; /* Alinhamento da Terra em relação à trajetória/linha de órbita(Direita) */
+    width: 1.2em; /* Largura da Lua*/
+    height: 1.2em; /* Altura da Lua*/
+    background-color: silver; /* Cor de fundo da Lua*/
+}
+
+
+@keyframes orbit { /* Essa linha define uma nova animação chamada orbit. @Keyframes é uma regra em CSS que especifica a animação*/
+    to {/* Linha que indica o estado final da animação, ou seja, 100% da duração da animação*/
+        transform: rotate(360deg); /* Essa linha aplica uma transformação de rotação ao elemnto cuja circunferência é de 360° */
+    }
+}

@@ -1,0 +1,48 @@
+html{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    margin: 0;
+}
+
+div#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    height: 450px;
+    width: 900px;
+    position: relative;
+    border-radius: 15px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid;
+    border-color: white
+}
+div#container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-image: url(cidade.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover
+}
+input{
+    border-radius: 5px;
+    width: 100%;
+    
+}
+table{
+    border-spacing: 80px 15px;
+}
+td#cadastro{
+    text-align: center;
+}
+td#rodape{
+    font-size: 10px;
+}
