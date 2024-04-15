@@ -83,7 +83,7 @@ body{
     align-items: center;
 }
 #details-container #umidity{ /* Aqui manipulamos apenas o elemento "umidity" dentro do elemento "details-container"*/
-border-right: 1px solid #fff;
-margin: 0.6rem;
-padding: 0.6rem;
+    border-right: 1px solid #fff;
+    margin: 0.6rem;
+    padding: 0.6rem;
 }
