@@ -1,12 +1,7 @@
-// 6a416c25f7f0d0dda1a45e20378d7949
-//https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={api key}&lang=pt_br
-//https://api.openweathermap.org/data/2.5/weather?q=Paulista&units=metric&appid=6a416c25f7f0d0dda1a45e20378d7949&lang=pt_br
-
-
-
 // VARIÁVEIS E SELEÇÕES DE ELEMENTOS
 
 const apiKey = "6a416c25f7f0d0dda1a45e20378d7949";
+const apiUnsplash = "https://source.unsplash.com/1600x900/?"
 
 const cityInput = document.querySelector("#city-input");
 const searchBT = document.querySelector("#search");
@@ -19,7 +14,7 @@ const countryElement = document.querySelector("#country");
 const umidityElementy = document.querySelector("#umidity span");
 const windElement = document.querySelector("#wind span");
 
-
+const weatherData = document.querySelector("#weather-data"); 
 
 
 // FUNÇÕES
@@ -32,8 +27,6 @@ const getWeatherData = async(city) =>{
 
     return data;
 
-
-
 };
 
 const showWeatherData = async(city) => {
@@ -45,11 +38,15 @@ const showWeatherData = async(city) => {
     tempElement.innerText = parseInt(data.main.temp);
     descElement.innerText = data.weather[0].description;
     weatherIconElement.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
+    countryElement.setAttribute("src", `https://flagsapi.com/${data.sys.country}/shiny/64.png`);
     umidityElementy.innerText = `${data.main.humidity}%`;
-    windElement.innerText = `${data.wind.speed} km/h`;
+    windElement.innerText = `${data.wind.speed} km/h`; 
 
+    document.body.style.backgroundImage = `url("${apiUnsplash + city}")` //Altera a imagem de fundo
+
+    weatherData.classList.remove("hide"); //Remove a classe "hide" da div "weatherData"
+     
 };
-
 
 
 
@@ -60,6 +57,16 @@ searchBT.addEventListener("click", (e) => { //"e" é o valor/conteúdo de evento
 
     const city = cityInput.value;
 
-
     showWeatherData(city);
-})
+});
+
+cityInput.addEventListener("keyup", (e) => { //e captura o valor/código da tecla
+    if(e.code === "Enter") {
+        e.preventDefault();
+
+        const city = cityInput.value; //Valor do campo input
+
+        showWeatherData(city);
+         
+    } 
+});

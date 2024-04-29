@@ -18,6 +18,11 @@ body{
     align-items: center;
     height: 100vh; /* Altura de acordo com o despositivo(vertical height)*/
 }
+.hide{ /* O hide é uma classe que esconde o elemento */
+    display: none;
+}
+
+
 .container{
     background-color: #5c54ed ; 
     box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
