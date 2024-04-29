@@ -1,0 +1,38 @@
+body {
+    background-color: whitesmoke;
+    font-family: Arial;
+    background-image: linear-gradient(to right, whitesmoke, rgb(172, 172, 172));
+
+
+}
+div#container{
+    display: flex;
+    justify-content: center;
+
+}
+div#box{
+    margin-top: 10px;
+}
+
+input{
+    margin-top: 5px;
+    border-radius: 5px;
+
+
+}
+
+button{
+    margin-top: 10px;
+}
+
+
+
+
+
+h1{
+    text-align: center;
+}
+p#resposta{
+    text-align: center;
+    color: red;
+}

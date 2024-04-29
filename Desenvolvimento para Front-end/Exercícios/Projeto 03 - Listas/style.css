@@ -1,0 +1,30 @@
+html {
+    font-family: Arial;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(254, 196, 87), white);
+}
+img {
+    margin-left: 10px;
+    border-radius: 15px
+}
+img#corinthians {
+    width: 1%;
+}
+
+h1 {
+    margin-left: 10px;
+}
+h3 {
+    margin-left: 15px;
+}
+ul {
+    margin-left: 15px;
+}
+ol {
+    margin-left: 20px;
+}
+h4 {
+    margin-left: 25px;
+}
