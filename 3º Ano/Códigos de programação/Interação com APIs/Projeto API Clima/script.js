@@ -31,6 +31,11 @@ const getWeatherData = async(city) =>{
 
 const showWeatherData = async(city) => {
     const data = await getWeatherData(city);
+
+    if(data.cod === "404"){
+        window.alert("A cidade que você digitou não existe. Digite outra cidade.")
+        return
+    }
     
     getWeatherData(city);
 
