@@ -1,7 +1,6 @@
 // VARIÁVEIS E SELEÇÕES DE ELEMENTOS
 
 const apiKey = "6a416c25f7f0d0dda1a45e20378d7949";
-const apiUnsplash = "https://source.unsplash.com/1600x900/?"
 
 const cityInput = document.querySelector("#city-input");
 const searchBT = document.querySelector("#search");
@@ -47,7 +46,6 @@ const showWeatherData = async(city) => {
     umidityElementy.innerText = `${data.main.humidity}%`;
     windElement.innerText = `${data.wind.speed} km/h`; 
 
-    document.body.style.backgroundImage = `url("${apiUnsplash + city}")` //Altera a imagem de fundo
 
     weatherData.classList.remove("hide"); //Remove a classe "hide" da div "weatherData"
      
