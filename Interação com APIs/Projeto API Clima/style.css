@@ -12,12 +12,24 @@ font-family: "Ubuntu",sans-serif;
 }
 
 body{
-    background: linear-gradient(180deg,#594cee 0%, #8dd0f5 100%);
+    background: linear-gradient(90deg,rgb(89, 76, 238), rgb(67, 186, 255), rgb(141, 208, 245), rgb(160, 43, 255));
+    background-size: 5000% 400%;
+    animation: degrade-animado 10s infinite alternate;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; /* Altura de acordo com o despositivo(vertical height)*/
 }
+
+@keyframes degrade-animado{ /* Efeito de degradê animado*/
+    0%{
+        background-position-x: 0% ;
+    }
+    100%{
+        background-position-x: 100% ;
+    }
+}
+
 .hide{ /* O hide é uma classe que esconde o elemento */
     display: none;
 }
