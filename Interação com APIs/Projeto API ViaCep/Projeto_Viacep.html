@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Cadastro com API</title>
+    <script src="Via_cep.js"></script>
+    <link rel="stylesheet" href="Via_cep.css">
+</head>
+<body>
+    <div id="container">
+        <div id="form">
+            <form method="get" action=".">
+                <table>
+                    <thead>
+                        <tr>
+                            <td id="cadastro" colspan="2">
+                                <h1>Cadastro</h1>
+                            </td>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="">Nome completo: </label><br>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <label for="">CPF: </label><br>
+                                <input type="text" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Cep: </label><br>
+                                <input name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
+                            </td>
+                            <td>
+                                <label>Rua: </label><br>
+                                <input name="rua" type="text" id="rua" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Bairro: </label><br>
+                                <input name="bairro" type="text" id="bairro" />
+                            </td>
+                            <td>
+                                <label>Estado: </label><br>
+                                <input name="uf" type="text" id="uf"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Cidade: </label><br>
+                                <input name="cidade" type="text" id="cidade"/></label>
+                            </td>
+                            <td>
+                                <label for="">E-mail: </label><br>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Nº de telefone</label><br>
+                                <input type="text" maxlength="9">
+                            </td>
+                        </tr>
+                    </tbody>
+
+
+                    <tfoot>
+                        <tr>
+                            <td id="rodape" colspan="2">* Este formulário foi feito pelos alunos Arthur Germano, Felipe Leonardo e José Marcus. Todos são do 3ºE.*</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

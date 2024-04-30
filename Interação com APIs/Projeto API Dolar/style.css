@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;  
+    background-image: url(bitcoin.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover
+}
+
+
+#form{
+    flex-direction: column;
+    width: 600px;
+    height: 280px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid;
+    border-color: white;
+    border-radius: 10px;
+}
+div#h1{
+    display: flex;
+    justify-content: center;
+}
+
+div#input{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+div#botao{
+    display: flex;
+    justify-content: center;
+}
+div#texto{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+label{
+    font-size: 20px;
+}
+
+p{
+    color: red;
+}
