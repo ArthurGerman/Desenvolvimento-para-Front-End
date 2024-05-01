@@ -1,1 +1,0 @@
-Seja bem-vindo ao meu reposiório de códigos "Desenvolvimento para Front-End". Nele, estão contidos alguns dos projetos mais interessantes que desenvolvi na minha carreira como desenvolvedor front-end.
