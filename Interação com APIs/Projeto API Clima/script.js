@@ -52,8 +52,6 @@ const loader = document.querySelector("#loader");
             const response = await fetch(apiWeatherURL);
             const data = await response.json();
 
-            toggleLoader();
-
             return data;
 
         };
@@ -70,7 +68,6 @@ const loader = document.querySelector("#loader");
                 return
             }
             
-            getWeatherData(city);
 
             cityElement.innerText = data.name;
             tempElement.innerText = parseInt(data.main.temp);
