@@ -1,9 +1,5 @@
 /* Digite ctrl + ; para comentar rapidamente em css */
 
-/* Pontos para estudar em casa: Unidades de medida(rem e vh), min width, flex*/
-
-
-
 *{
     /* Setar para zero o espaço na margem e usar a fonte importada */
 padding: 0;
@@ -38,7 +34,7 @@ body{
 .container{
     background-color: #5c54ed ; 
     box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
-    padding: 2rem;     /*Espaçamento . O rem é uma unidade de proporção*/
+    padding: 2rem;     /*Espaçamento. O rem é uma unidade de proporção*/
     color: #fdfdfd;
     border-radius: 1rem;
 }
@@ -61,7 +57,6 @@ body{
     flex: 1;
     border-radius: 4px;
 }
-
 .form button{
     padding: .8rem;
     min-width: 50px; 
@@ -75,13 +70,14 @@ body{
 
 /* CLIMA */
 
-#weather-data{
+#weather-data,
+#error-message,
+#loader{
     border-top: 1px solid #fff; /* Borda de cima*/
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     text-align: center;
 }
-
 #weather-data h2 i{ /* Aqui há uma ocasião especial. Nessa linha, nós estamos manipulando o elemento "i" dentro do "h2" que por sua vez setá dentro do elemento com id "weather-data".*/
     font-size: 1rem;
 }

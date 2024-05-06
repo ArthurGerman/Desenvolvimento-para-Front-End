@@ -15,41 +15,75 @@ const windElement = document.querySelector("#wind span");
 
 const weatherData = document.querySelector("#weather-data"); 
 
+const cityErrorElement = document.querySelector("#error-message span"); 
+const errorMessageContainer = document.querySelector("#error-message"); 
+const loader = document.querySelector("#loader"); 
+
 
 // FUNÇÕES
 
-const getWeatherData = async(city) =>{
-    const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
+    // FUNÇÃO DE LOADING
 
-    const response = await fetch(apiWeatherURL);
-    const data = await response.json();
+        const toggleLoader = () => {
+            loader.classList.toggle("hide");
+        }
 
-    return data;
+    // FUNÇÃO QUE ESCONDE AS DIVS
 
-};
-
-const showWeatherData = async(city) => {
-    const data = await getWeatherData(city);
-
-    if(data.cod === "404"){
-        window.alert("A cidade que você digitou não existe. Digite outra cidade.")
-        return
-    }
-    
-    getWeatherData(city);
-
-    cityElement.innerText = data.name;
-    tempElement.innerText = parseInt(data.main.temp);
-    descElement.innerText = data.weather[0].description;
-    weatherIconElement.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
-    countryElement.setAttribute("src", `https://flagsapi.com/${data.sys.country}/shiny/64.png`);
-    umidityElementy.innerText = `${data.main.humidity}%`;
-    windElement.innerText = `${data.wind.speed} km/h`; 
+        const hideInformation = () => {
+            errorMessageContainer.classList.add("hide");
+            weatherData.classList.add("hide");
+        };
 
 
-    weatherData.classList.remove("hide"); //Remove a classe "hide" da div "weatherData"
-     
-};
+    // TRATAMENTO DE ERROS
+
+        const showErrorMessage = () => {
+            cityErrorElement.innerText = cityInput.value //Linha de modificação
+            errorMessageContainer.classList.remove("hide");
+        };
+
+
+    //    REQUISIÇÃO NA API DO CLIMA
+        const getWeatherData = async(city) =>{
+            toggleLoader();
+            const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
+
+            const response = await fetch(apiWeatherURL);
+            const data = await response.json();
+
+            toggleLoader();
+
+            return data;
+
+        };
+
+
+    //Função que recebe a cidade do input, chama a função de requisição dos dados e substitui na tela os elementos HTML
+        const showWeatherData = async(city) => {
+            hideInformation(); // Esconde as informações a cada nova pesquisa
+
+            const data = await getWeatherData(city);
+
+            if(data.cod === "404"){ // Verifica se a cidade existe 
+                showErrorMessage();
+                return
+            }
+            
+            getWeatherData(city);
+
+            cityElement.innerText = data.name;
+            tempElement.innerText = parseInt(data.main.temp);
+            descElement.innerText = data.weather[0].description;
+            weatherIconElement.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
+            countryElement.setAttribute("src", `https://flagsapi.com/${data.sys.country}/shiny/64.png`);
+            umidityElementy.innerText = `${data.main.humidity}%`;
+            windElement.innerText = `${data.wind.speed} km/h`; 
+
+
+            weatherData.classList.remove("hide"); //Remove a classe "hide" da div "weatherData". O "classlist" serve para fazer alguma ação com a classe ou manipular elementos.
+            
+        };
 
 
 
@@ -57,18 +91,14 @@ const showWeatherData = async(city) => {
 
 searchBT.addEventListener("click", (e) => { //"e" é o valor/conteúdo de evento do click. O objeto do evento "e" contém informações sobre o evento de click.
     e.preventDefault(); // O comando preventDefault evita o envio do formulário
-
     const city = cityInput.value;
-
     showWeatherData(city);
 });
 
 cityInput.addEventListener("keyup", (e) => { //e captura o valor/código da tecla
     if(e.code === "Enter") {
         e.preventDefault();
-
         const city = cityInput.value; //Valor do campo input
-
         showWeatherData(city);
          
     } 
