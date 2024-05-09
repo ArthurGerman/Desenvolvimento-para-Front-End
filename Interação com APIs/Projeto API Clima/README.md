@@ -1,1 +1,27 @@
-Este projeto consiste numa interface html, que utiliza de uma api para fornecer dados climáticos ao usuário de qualquer lugar do mundo.
+<h1>Projeto API Metreologia</h1>
+
+<h1>Sobre o projeto</h1>
+O objetivo do projeto foi criar uma interface html, que utilizasse de uma api para fornecer ao usuário dados climáticos de qualquer cidade do mundo. Este projeto
+
+<h1>Layout do projeto</h1>
+<img src ="">
+
+
+
+
+
+<h1>Tecnologias utilizadas</h1>
+<ul>
+  <li>Html</li>
+  <li>Css</li>
+  <li>JavaScript</li>
+  <li>API de metereologia da OpenWeatherMap</li>
+  <li>Google Fonts</li>
+</ul>
+
+<h1>Autor</h1>
+<p><strong>Arthur Germano da Cunha Silva</strong></p>
+
+<p>LinkedIn:</p>
+<a></a>
+
