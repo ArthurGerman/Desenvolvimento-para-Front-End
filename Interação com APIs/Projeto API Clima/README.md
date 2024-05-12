@@ -1,7 +1,7 @@
 <h1>Projeto API Metreologia</h1>
-<img alt="Static Badge" src="https://img.shields.io/badge/Front_end-JavaScript-yellow">
-<img alt="Static Badge" src="https://img.shields.io/badge/Front_end-Html-red">
-<img alt="Static Badge" src="https://img.shields.io/badge/Front_end-Css-blue">
+<img alt="Static Badge" src="https://img.shields.io/badge/JavaScript-yellow">
+<img alt="Static Badge" src="https://img.shields.io/badge/Html-red">
+<img alt="Static Badge" src="https://img.shields.io/badge/Css-blue">
 
 <h1>Sobre o projeto</h1>
 O objetivo do projeto foi criar uma interface html, que utilizasse de uma api para fornecer ao usuário dados climáticos de qualquer cidade do mundo. Este projeto
