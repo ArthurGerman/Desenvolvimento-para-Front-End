@@ -1,4 +1,4 @@
-<h1>Projeto API Metreologia</h1>
+<h1>Projeto API Metereologia</h1>
 <img alt="Static Badge" src="https://img.shields.io/badge/JavaScript-yellow">
 <img alt="Static Badge" src="https://img.shields.io/badge/Html-red">
 <img alt="Static Badge" src="https://img.shields.io/badge/Css-blue">
