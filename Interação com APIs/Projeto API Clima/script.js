@@ -52,6 +52,8 @@ const loader = document.querySelector("#loader");
             const response = await fetch(apiWeatherURL);
             const data = await response.json();
 
+            toggleLoader();
+
             return data;
 
         };
